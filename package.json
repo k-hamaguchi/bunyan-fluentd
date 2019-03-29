@@ -1,0 +1,13 @@
+{
+  "name": "bunyan-fluentd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "index.js"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "fluent-logger": "^3.3.1"
+  }
+}

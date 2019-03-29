@@ -1,0 +1,18 @@
+version: "3.0"
+
+services:
+  fluentd:
+    image: fluent/fluentd:latest
+    ports:
+      - 24224:24224
+    volumes:
+      - ./fluent.conf:/fluentd/etc/fluent.conf
+
+  app:
+    image: node:lts-alpine
+    depends_on:
+      - fluentd
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: node index.js
